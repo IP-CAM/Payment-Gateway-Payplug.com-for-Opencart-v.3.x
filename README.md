@@ -1,1 +1,1 @@
-# Payplug.com-Opencart-3
+# Payment gateway Payplug.com for Opencart 3.x
