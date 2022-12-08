@@ -1,0 +1,23 @@
+{% if payplug_error %}
+    <div class="text-right mt-2" style="background-color: #ffcdee;color: darkred; font-size: 20px;">
+        {{ payplug_error }}
+{#        <pre>#}
+{#          {{ payplug_request_text }}#}
+{#        </pre>#}
+    </div>
+{% else %}
+
+    <script type="text/javascript" src="https://api.payplug.com/js/1/form.latest.js"></script>
+    <script type="text/javascript">
+        function payPlugFnc() {
+            var payplug_url = '{{ payplug_url }}';
+            Payplug.showPayment(payplug_url);
+        }
+    </script>
+    <div class="text-right mt-2">
+        <button type="submit" id="payPlugButton" onclick="payPlugFnc()" class="btn btn-success">
+            {{ button_confirm }}
+        </button>
+    </div>
+
+{% endif %}
