@@ -15,7 +15,6 @@ class ControllerExtensionPaymentPayPlugM extends Controller {
         $data['order_info'] = print_r($order_info, true);
 
         $secretkey = $this->config->get('payment_pay_plug_m_secret_key');
-        // $secretkey = 'sk_test_1Kj3pexTwXEpFSGB334YaU';
         if (empty($secretkey)) {
             $data['payplug_error'] = 'Empty Secret Key';
             return $this->load->view('extension/payment/pay_plug_m', $data);
